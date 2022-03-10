@@ -1,0 +1,38 @@
+{
+  "itemGroup.itemtab": "Core Ascension Items",
+  "itemGroup.blocktab": "Core Ascension Blocks",
+
+  "item.coreascent.sulphur" : "Sulphur",
+  "item.coreascent.tadanite_crystal" : "§aTadanite Crystal",
+  "item.coreascent.tadanite_diamond" : "§aTadanite Diamond",
+  "item.coreascent.tadanite_pickaxe" : "§aTadanite Pickaxe",
+  "item.coreascent.tadanite_axe" : "§aTadanite Axe",
+  "item.coreascent.tadanite_shovel" : "§aTadanite Shovel",
+  "item.coreascent.tadanite_hoe" : "§aTadanite Hoe",
+  "item.coreascent.tadanite_sword" : "§aTadanite Sword",
+  "item.coreascent.tadanite_helmet" : "§aTadanite Helmet",
+  "item.coreascent.tadanite_chestplate" : "§aTadanite Chestplate",
+  "item.coreascent.tadanite_leggings" : "§aTadanite Leggings",
+  "item.coreascent.tadanite_boots" : "§aTadanite Boots",
+
+  "item.coreascent.lumite_ingot" : "§6Lumite Ingot",
+  "item.coreascent.lumite_nugget" : "§6Lumite Nugget",
+  "item.coreascent.lumite_gear" : "§6Lumite Gear",
+  "item.coreascent.lumite_pickaxe" : "§6Lumite Pickaxe",
+  "item.coreascent.lumite_axe" : "§6Lumite Axe",
+  "item.coreascent.lumite_shovel" : "§6Lumite Shovel",
+  "item.coreascent.lumite_hoe" : "§6Lumite Hoe",
+  "item.coreascent.lumite_sword" : "§6Lumite Sword",
+
+  "item.coreascent.lumite_helmet" : "§6Lumite Helmet",
+  "item.coreascent.lumite_chestplate" : "§6Lumite Chestplate",
+  "item.coreascent.lumite_leggings" : "§6Lumite Leggings",
+  "item.coreascent.lumite_boots" : "§6Lumite Boots",
+
+  "block.coreascent.sulphur_block" : "Block of Sulphur",
+  "item.coreascent.sulphur_block" : "Block of Sulphur",
+  "block.coreascent.sulphur_ore" : "Sulphur Ore",
+  "item.coreascent.sulphur_ore" : "Sulphur Ore",
+  "block.coreascent.tadanite_ore" : "§aTadanite Ore",
+  "item.coreascent.tadanite_ore" : "§aTadanite Ore"
+}
