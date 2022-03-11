@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/tanzanite_block_top",
+    "up": "coreascent:block/tanzanite_block_top",
+    "north": "coreascent:block/tanzanite_block_side",
+    "east": "coreascent:block/tanzanite_block_side",
+    "south": "coreascent:block/tanzanite_block_side",
+    "west": "coreascent:block/tanzanite_block_side",
+    "particle": "coreascent:block/tanzanite_block_top"
+  }
+}

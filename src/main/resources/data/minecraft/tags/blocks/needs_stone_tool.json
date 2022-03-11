@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "coreascent:sulphur_block",
+    "coreascent:sulphur_block",
+    "coreascent:ruby_block",
+    "coreascent:citrine_block",
+    "coreascent:topaz_block",
+    "coreascent:sapphire_block",
+    "coreascent:tanzanite_block"
+  ]
+}

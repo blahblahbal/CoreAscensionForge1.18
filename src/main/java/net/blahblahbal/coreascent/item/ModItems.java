@@ -48,6 +48,8 @@ public class ModItems
     public static final RegistryObject<Item> LUMITE_INGOT = ITEMS.register("lumite_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
 
+
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

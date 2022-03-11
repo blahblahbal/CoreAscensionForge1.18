@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/sapphire_ore",
+    "up": "coreascent:block/sapphire_ore",
+    "north": "coreascent:block/sapphire_ore",
+    "east": "coreascent:block/sapphire_ore",
+    "south": "coreascent:block/sapphire_ore",
+    "west": "coreascent:block/sapphire_ore",
+    "particle": "coreascent:block/sapphire_ore"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/tanzanite_ore",
+    "up": "coreascent:block/tanzanite_ore",
+    "north": "coreascent:block/tanzanite_ore",
+    "east": "coreascent:block/tanzanite_ore",
+    "south": "coreascent:block/tanzanite_ore",
+    "west": "coreascent:block/tanzanite_ore",
+    "particle": "coreascent:block/tanzanite_ore"
+  }
+}

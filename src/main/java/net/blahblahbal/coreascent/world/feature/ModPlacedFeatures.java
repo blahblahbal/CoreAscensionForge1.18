@@ -8,6 +8,9 @@ import net.minecraft.world.level.levelgen.placement.*;
 public class ModPlacedFeatures
 {
     public static final PlacedFeature SULPHUR_ORE_PLACED = PlacementUtils.register("sulphur_ore_placed",
-            ModConfiguredFeature.SULPHUR_ORE.placed(ModOrePlacement.commonOrePlacement(3, // VeinsPerChunk
+            ModConfiguredFeature.SULPHUR_ORE.placed(ModOrePlacement.commonOrePlacement(6, // VeinsPerChunk
+                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final PlacedFeature RUBY_ORE_PLACED = PlacementUtils.register("ruby_ore_placed",
+            ModConfiguredFeature.RUBY_ORE.placed(ModOrePlacement.commonOrePlacement(3, // VeinsPerChunk
                     HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 }

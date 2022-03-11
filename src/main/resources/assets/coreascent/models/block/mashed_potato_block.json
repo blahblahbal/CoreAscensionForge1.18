@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "blahmod:blocks/mashed_potato_block",
+    "up": "blahmod:blocks/mashed_potato_block",
+    "north": "blahmod:blocks/mashed_potato_block",
+    "east": "blahmod:blocks/mashed_potato_block",
+    "south": "blahmod:blocks/mashed_potato_block",
+    "west": "blahmod:blocks/mashed_potato_block",
+    "particle": "blahmod:blocks/mashed_potato_block"
+  }
+}

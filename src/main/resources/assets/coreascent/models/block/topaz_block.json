@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/topaz_block",
+    "up": "coreascent:block/topaz_block",
+    "north": "coreascent:block/topaz_block",
+    "east": "coreascent:block/topaz_block",
+    "south": "coreascent:block/topaz_block",
+    "west": "coreascent:block/topaz_block",
+    "particle": "coreascent:block/topaz_block"
+  }
+}

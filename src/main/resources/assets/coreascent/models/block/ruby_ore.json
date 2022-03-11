@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/ruby_ore",
+    "up": "coreascent:block/ruby_ore",
+    "north": "coreascent:block/ruby_ore",
+    "east": "coreascent:block/ruby_ore",
+    "south": "coreascent:block/ruby_ore",
+    "west": "coreascent:block/ruby_ore",
+    "particle": "coreascent:block/ruby_ore"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "coreascent:sulphur_ore",
+    "coreascent:ruby_ore",
+    "coreascent:citrine_ore",
+    "coreascent:topaz_ore",
+    "coreascent:sapphire_ore",
+    "coreascent:tanzanite_ore"
+  ]
+}
