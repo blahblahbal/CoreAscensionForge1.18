@@ -29,6 +29,16 @@ public class ModItems
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     // end tadanite tools
 
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> CITRINE = ITEMS.register("citrine",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> TOPAZ = ITEMS.register("topaz",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> TANZANITE = ITEMS.register("tanzanite",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> SULPHUR = ITEMS.register("sulphur",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> TADANITE_CRYSTAL = ITEMS.register("tadanite_crystal",

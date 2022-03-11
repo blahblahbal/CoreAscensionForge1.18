@@ -3,6 +3,11 @@
   "itemGroup.blocktab": "Core Ascension Blocks",
 
   "item.coreascent.sulphur" : "Sulphur",
+  "item.coreascent.ruby" : "Ruby",
+  "item.coreascent.citrine" : "Citrine",
+  "item.coreascent.topaz" : "Topaz",
+  "item.coreascent.sapphire" : "Sapphire",
+  "item.coreascent.tanzanite" : "Tanzanite",
   "item.coreascent.tadanite_crystal" : "§aTadanite Crystal",
   "item.coreascent.tadanite_diamond" : "§aTadanite Diamond",
   "item.coreascent.tadanite_pickaxe" : "§aTadanite Pickaxe",
