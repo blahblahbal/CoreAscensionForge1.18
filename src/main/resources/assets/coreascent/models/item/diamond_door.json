@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coreascent:items/diamond_door_item"
+    "layer0": "coreascent:item/diamond_door_item"
   }
 }

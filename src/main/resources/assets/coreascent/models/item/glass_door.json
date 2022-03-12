@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coreascent:items/glass_door_item"
+    "layer0": "coreascent:item/glass_door_item"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_trapdoor_top",
   "textures": {
-    "texture": "coreascent:block/cactus_trapdoor"
+    "texture": "coreascent:block/glass_trapdoor"
   }
 }

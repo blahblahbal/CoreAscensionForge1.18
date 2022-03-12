@@ -1,5 +1,5 @@
 {
-  "parent": "coreascent:block/glass_trapdoor",
+  "parent": "coreascent:block/glass_trapdoor_bottom",
   "display": {
     "thirdperson": {
       "rotation": [

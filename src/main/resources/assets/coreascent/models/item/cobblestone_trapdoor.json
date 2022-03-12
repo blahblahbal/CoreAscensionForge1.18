@@ -1,5 +1,5 @@
 {
-  "parent": "coreascent:block/cobblestone_trapdoor",
+  "parent": "coreascent:block/cobblestone_trapdoor_bottom",
   "display": {
     "thirdperson": {
       "rotation": [

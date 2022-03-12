@@ -41,16 +41,16 @@ public class ModBlocks
             () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(2f).noOcclusion()), ModCreativeModeTab.BLOCK_TAB);
     public static final RegistryObject<Block> DIAMOND_DOOR = registerBlock("diamond_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(2f).noOcclusion().sound(SoundType.METAL)), ModCreativeModeTab.BLOCK_TAB);
     public static final RegistryObject<Block> DIAMOND_TRAPDOOR = registerBlock("diamond_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(2f).noOcclusion().sound(SoundType.METAL)), ModCreativeModeTab.BLOCK_TAB);
     public static final RegistryObject<Block> GOLD_DOOR = registerBlock("gold_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(2f).noOcclusion().sound(SoundType.METAL)), ModCreativeModeTab.BLOCK_TAB);
     public static final RegistryObject<Block> GOLD_TRAPDOOR = registerBlock("gold_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(2f).noOcclusion().sound(SoundType.METAL)), ModCreativeModeTab.BLOCK_TAB);
     public static final RegistryObject<Block> GLASS_DOOR = registerBlock("glass_door",
             () -> new DoorBlock(BlockBehaviour.Properties.of(Material.GLASS)
@@ -117,11 +117,11 @@ public class ModBlocks
     //cactus stuff
     public static final RegistryObject<Block> CACTUS_DOOR = registerBlock("cactus_door",
             () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
-                    .strength(2f).noOcclusion()), ModCreativeModeTab.BLOCK_TAB);
+                    .strength(2f).noOcclusion().sound(SoundType.WOOD)), ModCreativeModeTab.BLOCK_TAB);
 
     public static final RegistryObject<Block> CACTUS_TRAPDOOR = registerBlock("cactus_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
-                    .strength(2f).noOcclusion()), ModCreativeModeTab.BLOCK_TAB);
+                    .strength(2f).noOcclusion().sound(SoundType.WOOD)), ModCreativeModeTab.BLOCK_TAB);
 
     public static final RegistryObject<Block> CACTUS_PLANKS = registerBlock("cactus_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS))
@@ -146,6 +146,10 @@ public class ModBlocks
             }, ModCreativeModeTab.BLOCK_TAB);
     //end cactus stuff
 
+
+    public static final RegistryObject<Block> FLINT_BLOCK = registerBlock("flint_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(5f).requiresCorrectToolForDrops().sound(SoundType.METAL)), ModCreativeModeTab.BLOCK_TAB);
     public static final RegistryObject<Block> COMPACT_STONE = registerBlock("compact_stone",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.BLOCK_TAB);
@@ -155,7 +159,7 @@ public class ModBlocks
 
     public static final RegistryObject<Block> SULPHUR_ORE = registerBlock("sulphur_ore",
             () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(4f).requiresCorrectToolForDrops(), UniformInt.of(15, 20)),
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.NETHER_ORE), UniformInt.of(15, 20)),
                     ModCreativeModeTab.BLOCK_TAB);
     //gem ore blocks
     public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",

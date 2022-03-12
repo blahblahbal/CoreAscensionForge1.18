@@ -1,5 +1,5 @@
 {
-  "parent": "coreascent:block/cactus_trapdoor_bottom",
+  "parent": "coreascent:block/flint_block",
   "display": {
     "thirdperson": {
       "rotation": [

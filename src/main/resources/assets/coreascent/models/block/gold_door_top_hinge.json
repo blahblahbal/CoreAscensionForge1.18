@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top_rh",
+  "textures": {
+    "bottom": "coreascent:block/gold_door_bottom",
+    "top": "coreascent:block/gold_door_top"
+  }
+}
