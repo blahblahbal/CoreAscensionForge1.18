@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascent:sulphur_block"
+    }
+  ],
+  "result": {
+    "item": "coreascent:sulphur",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascent:sapphire_block"
+    }
+  ],
+  "result": {
+    "item": "coreascent:sapphire",
+    "count": 9
+  }
+}

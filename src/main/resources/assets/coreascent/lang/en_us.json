@@ -38,6 +38,20 @@
   "item.coreascent.sulphur_block" : "Block of Sulphur",
   "block.coreascent.sulphur_ore" : "Sulphur Ore",
   "item.coreascent.sulphur_ore" : "Sulphur Ore",
+  "block.coreascent.ruby_ore" : "Ruby Ore",
+  "item.coreascent.ruby_ore" : "Ruby Ore",
+  "block.coreascent.citrine_ore" : "Citrine Ore",
+  "item.coreascent.citrine_ore" : "Citrine Ore",
+  "block.coreascent.topaz_ore" : "Topaz Ore",
+  "item.coreascent.topaz_ore" : "Topaz Ore",
+  "block.coreascent.sapphire_ore" : "Sapphire Ore",
+  "item.coreascent.sapphire_ore" : "Sapphire Ore",
+  "block.coreascent.tanzanite_ore" : "Tanzanite Ore",
+  "item.coreascent.tanzanite_ore" : "Tanzanite Ore",
   "block.coreascent.tadanite_ore" : "§aTadanite Ore",
-  "item.coreascent.tadanite_ore" : "§aTadanite Ore"
+  "item.coreascent.tadanite_ore" : "§aTadanite Ore",
+  "block.coreascent.mashed_potato_block" : "Mashed Potato Block",
+  "item.coreascent.mashed_potato_block" : "Mashed Potato Block",
+  "block.coreascent.carrot_block" : "Carrot Block",
+  "item.coreascent.carrot_block" : "Carrot Block"
 }

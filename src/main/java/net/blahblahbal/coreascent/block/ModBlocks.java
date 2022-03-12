@@ -28,7 +28,7 @@ public class ModBlocks
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.BLOCK_TAB);
 
-    public static final RegistryObject<Block> SULPHUR_ORE = registerBlock("cobalt_ore",
+    public static final RegistryObject<Block> SULPHUR_ORE = registerBlock("sulphur_ore",
             () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(4f).requiresCorrectToolForDrops(), UniformInt.of(15, 20)),
                     ModCreativeModeTab.BLOCK_TAB);

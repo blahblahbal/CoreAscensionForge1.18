@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "coreascent:sulphur"
+    }
+  },
+  "result": {
+    "item": "coreascent:sulphur_block"
+  }
+}
