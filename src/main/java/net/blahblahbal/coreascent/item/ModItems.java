@@ -1,6 +1,7 @@
 package net.blahblahbal.coreascent.item;
 
 import net.blahblahbal.coreascent.CoreAscension;
+import net.blahblahbal.coreascent.item.custom.OsborgnenFuelItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -29,6 +30,7 @@ public class ModItems
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     // end tadanite tools
 
+    // gems
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> CITRINE = ITEMS.register("citrine",
@@ -39,6 +41,11 @@ public class ModItems
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> TANZANITE = ITEMS.register("tanzanite",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+
+    // end gems
+
+    public static final RegistryObject<Item> OSBORGNEN_FUEL = ITEMS.register("osborgnen_fuel",
+            () -> new OsborgnenFuelItem(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> SULPHUR = ITEMS.register("sulphur",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> TADANITE_CRYSTAL = ITEMS.register("tadanite_crystal",
