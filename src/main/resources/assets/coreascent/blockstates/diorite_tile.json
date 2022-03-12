@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "coreascent:block/diorite_tile"
+    }
+  }
+}

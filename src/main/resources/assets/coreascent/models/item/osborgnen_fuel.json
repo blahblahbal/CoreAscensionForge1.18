@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "coreascent:item/osborgnen_fuel_1",
+    "layer1": "coreascent:item/osborgnen_fuel_2",
+    "layer2": "coreascent:item/osborgnen_fuel_3",
+    "layer3": "coreascent:item/osborgnen_fuel_4"
+  }
+}
