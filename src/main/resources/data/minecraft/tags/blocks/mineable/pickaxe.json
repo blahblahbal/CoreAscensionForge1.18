@@ -3,6 +3,31 @@
   "values": [
     "coreascent:tadanite_ore",
     "coreascent:sulphur_ore",
-    "coreascent:sulphur_block"
+    "coreascent:sulphur_block",
+    "coreascent:ruby_block",
+    "coreascent:citrine_block",
+    "coreascent:topaz_block",
+    "coreascent:sapphire_block",
+    "coreascent:tanzanite_block",
+    "coreascent:ruby_ore",
+    "coreascent:citrine_ore",
+    "coreascent:topaz_ore",
+    "coreascent:sapphire_ore",
+    "coreascent:tanzanite_ore",
+    "coreascent:blaze_brick",
+    "coreascent:compact_stone",
+    "coreascent:compressed_obsidian",
+    "coreascent:diorite_tile",
+    "coreascent:ender_pearl_bricks",
+    "coreascent:flint_block",
+    "coreascent:igneous_rock",
+    "coreascent:igneous_rock_tile",
+    "coreascent:magnetite",
+    "coreascent:magnetite_tile",
+    "coreascent:mossy_end_stone_bricks",
+    "coreascent:polished_igneous_rock",
+    "coreascent:polished_magnetite",
+    "coreascent:polished_saltrock",
+    "coreascent:saltrock"
   ]
 }

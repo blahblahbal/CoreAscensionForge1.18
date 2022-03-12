@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/saltrock_tile",
+    "up": "coreascent:block/saltrock_tile",
+    "north": "coreascent:block/saltrock_tile",
+    "east": "coreascent:block/saltrock_tile",
+    "south": "coreascent:block/saltrock_tile",
+    "west": "coreascent:block/saltrock_tile",
+    "particle": "coreascent:block/saltrock_tile"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascent:block/ender_pearl_brick",
+    "particle": "coreascent:block/ender_pearl_brick"
+  }
+}

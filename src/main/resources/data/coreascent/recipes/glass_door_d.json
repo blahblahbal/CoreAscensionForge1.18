@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascent:glass_door"
+    }
+  ],
+  "result": {
+    "item": "minecraft:glass",
+    "count": 2
+  }
+}

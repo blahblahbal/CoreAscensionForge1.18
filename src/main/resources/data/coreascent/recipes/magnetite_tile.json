@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "coreascent:polished_magnetite"
+    }
+  },
+  "result": {
+    "item": "coreascent:magnetite_tile",
+    "count": 4
+  }
+}

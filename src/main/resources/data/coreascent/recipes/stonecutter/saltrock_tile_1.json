@@ -1,0 +1,9 @@
+{
+  "group": "coreascent",
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "coreascent:polished_saltrock"
+  },
+  "result": "coreascent:saltrock_tile"
+}

@@ -1,0 +1,9 @@
+{
+  "group": "coreascent",
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "coreascent:igneous_rock"
+  },
+  "result": "coreascent:polished_igneous_rock"
+}

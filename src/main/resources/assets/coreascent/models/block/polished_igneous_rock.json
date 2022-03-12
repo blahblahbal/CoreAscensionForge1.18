@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/polished_igneous_rock",
+    "up": "coreascent:block/polished_igneous_rock",
+    "north": "coreascent:block/polished_igneous_rock",
+    "east": "coreascent:block/polished_igneous_rock",
+    "south": "coreascent:block/polished_igneous_rock",
+    "west": "coreascent:block/polished_igneous_rock",
+    "particle": "coreascent:block/polished_igneous_rock"
+  }
+}

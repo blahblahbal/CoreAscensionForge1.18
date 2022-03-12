@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/magnetite",
+    "up": "coreascent:block/magnetite",
+    "north": "coreascent:block/magnetite",
+    "east": "coreascent:block/magnetite",
+    "south": "coreascent:block/magnetite",
+    "west": "coreascent:block/magnetite",
+    "particle": "coreascent:block/magnetite"
+  }
+}

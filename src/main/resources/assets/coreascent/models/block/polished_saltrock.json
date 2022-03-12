@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/polished_saltrock_top",
+    "up": "coreascent:block/polished_saltrock_top",
+    "north": "coreascent:block/polished_saltrock",
+    "east": "coreascent:block/polished_saltrock",
+    "south": "coreascent:block/polished_saltrock",
+    "west": "coreascent:block/polished_saltrock",
+    "particle": "coreascent:block/polished_saltrock_top"
+  }
+}

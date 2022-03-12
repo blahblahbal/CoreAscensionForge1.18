@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/igneous_rock",
+    "up": "coreascent:block/igneous_rock",
+    "north": "coreascent:block/igneous_rock",
+    "east": "coreascent:block/igneous_rock",
+    "south": "coreascent:block/igneous_rock",
+    "west": "coreascent:block/igneous_rock",
+    "particle": "coreascent:block/igneous_rock"
+  }
+}

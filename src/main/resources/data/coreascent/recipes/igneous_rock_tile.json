@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "coreascent:polished_igneous_rock"
+    }
+  },
+  "result": {
+    "item": "coreascent:igneous_rock_tile",
+    "count": 4
+  }
+}

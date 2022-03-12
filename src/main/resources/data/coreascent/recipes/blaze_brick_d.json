@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascent:blaze_brick"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blaze_rod",
+    "count": 5
+  }
+}
