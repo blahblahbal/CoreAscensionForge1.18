@@ -3,7 +3,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "coreascent:saltrock"
+    "item": "minecraft:polished_andesite"
   },
-  "result": "coreascent:saltrock_tile"
+  "result": "coreascent:andesite_tile"
 }
