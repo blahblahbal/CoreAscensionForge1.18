@@ -1,7 +1,9 @@
 package net.blahblahbal.coreascent.item;
 
 import net.blahblahbal.coreascent.CoreAscension;
+import net.blahblahbal.coreascent.item.custom.LumiteSwordItem;
 import net.blahblahbal.coreascent.item.custom.OsborgnenFuelItem;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,6 +13,24 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems
 {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CoreAscension.MOD_ID);
+
+    // lumite tools
+    public static final RegistryObject<Item> LUMITE_PICKAXE = ITEMS.register("lumite_pickaxe",
+            () -> new PickaxeItem(ModTiers.LUMITE, 2, -2.8f,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> LUMITE_AXE = ITEMS.register("lumite_axe",
+            () -> new AxeItem(ModTiers.LUMITE, 5, -3f,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> LUMITE_SHOVEL = ITEMS.register("lumite_shovel",
+            () -> new ShovelItem(ModTiers.LUMITE, 1.5f, -3f,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> LUMITE_HOE = ITEMS.register("lumite_hoe",
+            () -> new HoeItem(ModTiers.LUMITE, -4, 0f,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> LUMITE_SWORD = ITEMS.register("lumite_sword",
+            () -> new LumiteSwordItem(ModTiers.LUMITE, 5, -2.4f,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    // end lumite tools
 
     // tadanite tools
     public static final RegistryObject<Item> TADANITE_PICKAXE = ITEMS.register("tadanite_pickaxe",
@@ -28,6 +48,21 @@ public class ModItems
     public static final RegistryObject<Item> TADANITE_SWORD = ITEMS.register("tadanite_sword",
             () -> new SwordItem(ModTiers.TADANITE, 5, -2.4f,
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    // armor
+
+    public static final RegistryObject<Item> TADANITE_HELMET = ITEMS.register("tadanite_helmet",
+            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> TADANITE_CHESTPLATE = ITEMS.register("tadanite_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> TADANITE_LEGGINGS = ITEMS.register("tadanite_leggings",
+            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+    public static final RegistryObject<Item> TADANITE_BOOTS = ITEMS.register("tadanite_boots",
+            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+
     // end tadanite tools
 
     // gems

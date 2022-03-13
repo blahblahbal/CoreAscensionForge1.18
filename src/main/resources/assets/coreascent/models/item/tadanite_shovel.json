@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "coreascent:item/tadanite_shovel"
+    "layer0": "coreascent:item/tadanite/tadanite_shovel"
   }
 }
