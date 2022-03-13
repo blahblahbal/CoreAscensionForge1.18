@@ -3,6 +3,7 @@ package net.blahblahbal.coreascent.item;
 import net.blahblahbal.coreascent.CoreAscension;
 import net.blahblahbal.coreascent.item.custom.LumiteSwordItem;
 import net.blahblahbal.coreascent.item.custom.OsborgnenFuelItem;
+import net.blahblahbal.coreascent.item.custom.TadaniteArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,7 +33,7 @@ public class ModItems
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     // end lumite tools
 
-    // tadanite tools
+    // tadanite
     public static final RegistryObject<Item> TADANITE_PICKAXE = ITEMS.register("tadanite_pickaxe",
             () -> new PickaxeItem(ModTiers.TADANITE, 2, -2.8f,
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
@@ -51,19 +52,19 @@ public class ModItems
     // armor
 
     public static final RegistryObject<Item> TADANITE_HELMET = ITEMS.register("tadanite_helmet",
-            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.HEAD,
+            () -> new TadaniteArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> TADANITE_CHESTPLATE = ITEMS.register("tadanite_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.CHEST,
+            () -> new TadaniteArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.CHEST,
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> TADANITE_LEGGINGS = ITEMS.register("tadanite_leggings",
-            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.LEGS,
+            () -> new TadaniteArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.LEGS,
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     public static final RegistryObject<Item> TADANITE_BOOTS = ITEMS.register("tadanite_boots",
-            () -> new ArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.FEET,
+            () -> new TadaniteArmorItem(ModArmorMaterials.TADANITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
 
-    // end tadanite tools
+    // end tadanite
 
     // gems
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
