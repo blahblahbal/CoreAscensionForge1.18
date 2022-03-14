@@ -98,9 +98,9 @@ public class CatalyzerRecipe implements ICatalyzerRecipe
         public CatalyzerRecipe fromJson(ResourceLocation recipeId, JsonObject json)
         {
             NonNullList<Ingredient> inputs = NonNullList.create();
-            var input = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "input"));
+            /*var input = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "input"));
 
-            inputs.add(input);
+            inputs.add(input);*/
 
             var ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
             for (int i = 0; i < ingredients.size(); i++)

@@ -29,6 +29,10 @@ public class ModMenuTypes {
         CATALYZER.ifPresent(container -> MenuScreens.register(container, CatalyzerScreen::new));
     }
 
+    public static void register(IEventBus eventBus) {
+        MENUS.register(eventBus);
+    }
+
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> register(String name, Supplier<? extends MenuType<T>> container) {
         return MENUS.register(name, container);
     }

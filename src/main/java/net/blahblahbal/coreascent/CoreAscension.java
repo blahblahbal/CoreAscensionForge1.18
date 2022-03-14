@@ -43,6 +43,7 @@ public class CoreAscension
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModBlockEntities.register(eventBus);
+        ModMenuTypes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);

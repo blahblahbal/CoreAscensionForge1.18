@@ -33,15 +33,15 @@ public class CatalyzerMenu extends AbstractContainerMenu
         this.level = inv.player.level;
         this.result = new ResultContainer();
 
-        addPlayerInventory(inv);
-        addPlayerHotbar(inv);
-
         var matrix = new CraftingContainer(this, 4, 1);
 
-        this.addSlot(new Slot(matrix, 0, 26, 16)); // input
-        this.addSlot(new CatalyzerSulphurSlot(this, matrix, inv, 1, 26, 42));
-        this.addSlot(new CatalyzerReagentSlot(this, matrix, inv, 2, 66, 50));
-        this.addSlot(new CatalyzerResultSlot(this, matrix, inv, 3, 114, 33));
+        this.addSlot(new Slot(matrix, 0, 23, 19)); // input
+        this.addSlot(new CatalyzerSulphurSlot(this, matrix, inv, 1, 23, 45));
+        this.addSlot(new CatalyzerReagentSlot(this, matrix, inv, 2, 55, 19));
+        this.addSlot(new CatalyzerResultSlot(this, matrix, inv, 3, 117, 31));
+
+        addPlayerInventory(inv);
+        addPlayerHotbar(inv);
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
