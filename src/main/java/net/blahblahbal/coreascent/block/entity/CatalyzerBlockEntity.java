@@ -1,5 +1,6 @@
 package net.blahblahbal.coreascent.block.entity;
 
+import net.blahblahbal.coreascent.api.crafting.recipe.CatalyzerRecipe;
 import net.blahblahbal.coreascent.item.ModItems;
 import net.blahblahbal.coreascent.screen.CatalyzerMenu;
 import net.blahblahbal.coreascent.screen.ModMenuTypes;
@@ -29,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 
 public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
@@ -96,5 +98,28 @@ public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider {
         }
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
+    }
+
+    private static void craftItem(CatalyzerBlockEntity entity)
+    {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++)
+        {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<CatalyzerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(CatalyzerRecipe.Type.INSTANCE, inventory, level);
+
+        if(match.isPresent())
+        {
+            entity.itemHandler.extractItem(0,1, false);
+            entity.itemHandler.extractItem(1,1, false);
+            entity.itemHandler.extractItem(2,1, false);
+
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+        }
     }
 }
