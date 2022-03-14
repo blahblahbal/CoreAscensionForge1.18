@@ -1,6 +1,7 @@
 package net.blahblahbal.coreascent.block;
 
 import net.blahblahbal.coreascent.CoreAscension;
+import net.blahblahbal.coreascent.block.custom.CatalyzerBlock;
 import net.blahblahbal.coreascent.item.ModCreativeModeTab;
 import net.blahblahbal.coreascent.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -26,6 +27,10 @@ public class ModBlocks
 {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, CoreAscension.MOD_ID);
+
+    public static final RegistryObject<Block> CATALYZER = registerBlock("catalyzer",
+            () -> new CatalyzerBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion()),
+            ModCreativeModeTab.BLOCK_TAB);
 
     public static final RegistryObject<Block> SULPHUR_BLOCK = registerBlock("sulphur_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
@@ -72,6 +77,10 @@ public class ModBlocks
     public static final RegistryObject<Block> SALTROCK = registerBlock("saltrock",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(1.5f, 6f).requiresCorrectToolForDrops()),
+            ModCreativeModeTab.BLOCK_TAB);
+    public static final RegistryObject<Block> HARDENED_LAVA = registerBlock("hardened_lava",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(1f, 10f).requiresCorrectToolForDrops()),
             ModCreativeModeTab.BLOCK_TAB);
 
     public static final RegistryObject<Block> POLISHED_IGNEOUS_ROCK = registerBlock("polished_igneous_rock",
@@ -145,6 +154,9 @@ public class ModBlocks
                 }
             }, ModCreativeModeTab.BLOCK_TAB);
     //end cactus stuff
+
+    // tropics stuff
+
 
 
     public static final RegistryObject<Block> FLINT_BLOCK = registerBlock("flint_block",

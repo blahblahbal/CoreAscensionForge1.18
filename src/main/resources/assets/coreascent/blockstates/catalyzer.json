@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "coreascent:block/catalyzer"
+    },
+    "facing=east": {
+      "model": "coreascent:block/catalyzer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "coreascent:block/catalyzer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "coreascent:block/catalyzer",
+      "y": 270
+    }
+  }
+}

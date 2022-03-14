@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascent:block/hardened_lava",
+    "up": "coreascent:block/hardened_lava",
+    "north": "coreascent:block/hardened_lava",
+    "east": "coreascent:block/hardened_lava",
+    "south": "coreascent:block/hardened_lava",
+    "west": "coreascent:block/hardened_lava",
+    "particle": "coreascent:block/hardened_lava"
+  }
+}

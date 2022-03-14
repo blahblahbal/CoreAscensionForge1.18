@@ -1,0 +1,14 @@
+{
+  "type": "coreascent:catalyzer",
+  "ingredients": [
+    {
+      "item": "minecraft:coal_block",
+      "item": "coreascent:sulphur",
+      "item": "minecraft:lava_bucket"
+    }
+  ],
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 1
+  }
+}

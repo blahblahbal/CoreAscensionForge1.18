@@ -34,6 +34,15 @@ public class ModConfiguredFeature
     public static final List<OreConfiguration.TargetBlockState> TANZANITE_ORES = List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.TANZANITE_ORE.get().defaultBlockState()));
 
+    public static final List<OreConfiguration.TargetBlockState> IGNEOUS_ROCKS = List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.IGNEOUS_ROCK.get().defaultBlockState()));
+    public static final List<OreConfiguration.TargetBlockState> MAGNETITES = List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.MAGNETITE.get().defaultBlockState()));
+    public static final List<OreConfiguration.TargetBlockState> SALTROCKS = List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.SALTROCK.get().defaultBlockState()));
+    public static final List<OreConfiguration.TargetBlockState> HARDENED_LAVAS = List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.HARDENED_LAVA.get().defaultBlockState()));
+
     public static final ConfiguredFeature<?, ?> SULPHUR_ORE = FeatureUtils.register("sulphur_ore",
             Feature.ORE.configured(new OreConfiguration(SULPHUR_ORES, 7)));
 
@@ -45,4 +54,13 @@ public class ModConfiguredFeature
             Feature.ORE.configured(new OreConfiguration(TOPAZ_ORES, 3)));
     public static final ConfiguredFeature<?, ?> TANZANITE_ORE = FeatureUtils.register("tanzanite_ore",
             Feature.ORE.configured(new OreConfiguration(TANZANITE_ORES, 3)));
+
+    public static final ConfiguredFeature<?, ?> IGNEOUS_ROCK = FeatureUtils.register("igneous_rock",
+            Feature.ORE.configured(new OreConfiguration(IGNEOUS_ROCKS, 20)));
+    public static final ConfiguredFeature<?, ?> MAGNETITE = FeatureUtils.register("magnetite",
+            Feature.ORE.configured(new OreConfiguration(MAGNETITES, 20)));
+    public static final ConfiguredFeature<?, ?> SALTROCK = FeatureUtils.register("saltrock",
+            Feature.ORE.configured(new OreConfiguration(SALTROCKS, 20)));
+    public static final ConfiguredFeature<?, ?> HARDENED_LAVA = FeatureUtils.register("hardened_lava",
+            Feature.ORE.configured(new OreConfiguration(HARDENED_LAVAS, 15)));
 }

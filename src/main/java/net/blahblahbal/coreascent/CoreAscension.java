@@ -1,7 +1,12 @@
 package net.blahblahbal.coreascent;
 
+import net.blahblahbal.coreascent.api.crafting.ModRecipeSerializers;
 import net.blahblahbal.coreascent.block.ModBlocks;
+import net.blahblahbal.coreascent.block.entity.ModBlockEntities;
 import net.blahblahbal.coreascent.item.ModItems;
+import net.blahblahbal.coreascent.screen.CatalyzerScreen;
+import net.blahblahbal.coreascent.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -34,9 +39,13 @@ public class CoreAscension
     public CoreAscension()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        eventBus.register(new ModRecipeSerializers());
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModBlockEntities.register(eventBus);
+
         eventBus.addListener(this::setup);
+        eventBus.addListener(this::clientSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -54,6 +63,8 @@ public class CoreAscension
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DIAMOND_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_TRAPDOOR.get(), RenderType.cutout());
+        ModMenuTypes.onClientSetup();
+        //MenuScreens.register(ModMenuTypes.CATALYZER.get(), CatalyzerScreen::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)

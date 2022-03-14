@@ -45,12 +45,21 @@ public class ModOreGeneration
             base.add(() -> ModPlacedFeatures.TANZANITE_ORE_PLACED);
         }
 
-        List<Supplier<PlacedFeature>> sulphur =
+        List<Supplier<PlacedFeature>> base =
                 event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
-        sulphur.add(() -> ModPlacedFeatures.SULPHUR_ORE_PLACED);
+        base.add(() -> ModPlacedFeatures.SULPHUR_ORE_PLACED);
+        base.add(() -> ModPlacedFeatures.TOPAZ_ORE_PLACED);
+        base.add(() -> ModPlacedFeatures.IGNEOUS_ROCK_PLACED);
+        base.add(() -> ModPlacedFeatures.MAGNETITE_PLACED);
+        base.add(() -> ModPlacedFeatures.SALTROCK_PLACED);
+        base.add(() -> ModPlacedFeatures.HARDENED_LAVA_PLACED);
 
-        List<Supplier<PlacedFeature>> topaz =
+        /*List<Supplier<PlacedFeature>> topaz =
                 event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
         topaz.add(() -> ModPlacedFeatures.TOPAZ_ORE_PLACED);
+
+        List<Supplier<PlacedFeature>> igneousRock =
+                event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
+        igneousRock.add(() -> ModPlacedFeatures.IGNEOUS_ROCK_PLACED);*/
     }
 }

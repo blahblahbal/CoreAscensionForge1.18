@@ -1,0 +1,8 @@
+{
+  "parent": "coreascent:custom/catalyzer",
+  "textures": {
+    "all": "coreascent:block/catalyzer",
+    "particle": "coreascent:block/catalyzer",
+    "0": "coreascent:block/catalyzer"
+  }
+}
