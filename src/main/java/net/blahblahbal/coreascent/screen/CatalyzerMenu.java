@@ -43,26 +43,26 @@ public class CatalyzerMenu extends AbstractContainerMenu
         this.result = new ResultContainer();
         this.player = inv.player;
 
-        this.addSlot(new Slot(matrix, 0, 23, 19)); // input
-        this.addSlot(new CatalyzerSulphurSlot(this, matrix, inv, 1, 23, 45));
-        this.addSlot(new CatalyzerReagentSlot(this, matrix, inv, 2, 55, 19));
-        this.addSlot(new CatalyzerResultSlot(this, matrix, inv, 3, 117, 31));
+        this.addSlot(new Slot(matrix, 0, 23, 18)); // input
+        this.addSlot(new CatalyzerSulphurSlot(this, matrix, inv, 1, 23, 44));
+        this.addSlot(new CatalyzerReagentSlot(this, matrix, inv, 2, 55, 18));
+        this.addSlot(new CatalyzerResultSlot(this, matrix, inv, 3, 117, 30));
 
         int i, j;
         for (i = 0; i < 3; i++)
         {
             for (j = 0; j < 9; j++)
             {
-                this.addSlot(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 88 + i * 18));
+                this.addSlot(new Slot(inv, j + i * 9 + 9, 7 + j * 18, 83 + i * 18)); // 88
             }
         }
 
         for (j = 0; j < 9; j++)
         {
-            this.addSlot(new Slot(inv, j, 8 + j * 18, 146));
+            this.addSlot(new Slot(inv, j, 7 + j * 18, 141)); // 146
         }
 
-        slotsChanged(matrix);
+        //slotsChanged(matrix);
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -126,25 +126,20 @@ public class CatalyzerMenu extends AbstractContainerMenu
             var itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
 
-            if (slotNumber == 0)
+            if (slotNumber < 4)
             {
-                if (!this.moveItemStackTo(itemstack1, 10, 40, true))
+                if (!this.moveItemStackTo(itemstack1, 4, 40, true))
                 {
                     return ItemStack.EMPTY;
                 }
-
                 slot.onQuickCraft(itemstack1, itemstack);
             }
-            else if (slotNumber >= 10 && slotNumber < 40)
+            else
             {
-                if (!this.moveItemStackTo(itemstack1, 1, 10, false))
+                if (!this.moveItemStackTo(itemstack1, 0, 4, false))
                 {
                     return ItemStack.EMPTY;
                 }
-            }
-            else if (!this.moveItemStackTo(itemstack1, 10, 40, false))
-            {
-                return ItemStack.EMPTY;
             }
 
             if (itemstack1.isEmpty())
@@ -216,9 +211,9 @@ public class CatalyzerMenu extends AbstractContainerMenu
                 }
             }
 
-            resultContainer.setItem(0, itemstack);
-            menu.setRemoteSlot(0, itemstack);
-            serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 0, itemstack));
+            resultContainer.setItem(3, itemstack);
+            menu.setRemoteSlot(3, itemstack);
+            serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 3, itemstack));
         }
     }
     private void addPlayerHotbar(Inventory playerInventory)

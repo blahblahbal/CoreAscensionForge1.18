@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+import net.blahblahbal.coreascent.CoreAscension;
 import net.blahblahbal.coreascent.api.crafting.ICatalyzerRecipe;
 import net.blahblahbal.coreascent.api.crafting.ModRecipeSerializers;
 import net.blahblahbal.coreascent.api.crafting.RecipeTypes;
@@ -21,6 +22,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,8 +96,10 @@ public class CatalyzerRecipe implements ICatalyzerRecipe
         public static final Type INSTANCE = new Type();
         public static final String ID = "catalyzer";
     }
-    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<CatalyzerRecipe>
+    public static class Serializer implements RecipeSerializer<CatalyzerRecipe>
     {
+        public static final Serializer INSTANCE = new Serializer();
+        public static final ResourceLocation ID = new ResourceLocation(CoreAscension.MOD_ID,"catalyzer");
         @Override
         public CatalyzerRecipe fromJson(ResourceLocation recipeId, JsonObject json)
         {
@@ -167,6 +171,30 @@ public class CatalyzerRecipe implements ICatalyzerRecipe
                 ingredient.toNetwork(buffer);
             }
             buffer.writeItem(recipe.output);
+        }
+        @Override
+        public RecipeSerializer<?> setRegistryName(ResourceLocation name)
+        {
+            return INSTANCE;
+        }
+
+        @Nullable
+        @Override
+        public ResourceLocation getRegistryName()
+        {
+            return ID;
+        }
+
+        @Override
+        public Class<RecipeSerializer<?>> getRegistryType()
+        {
+            return Serializer.castClass(RecipeSerializer.class);
+        }
+
+        @SuppressWarnings("unchecked") // Need this wrapper, because generics
+        private static <G> Class<G> castClass(Class<?> cls)
+        {
+            return (Class<G>)cls;
         }
     }
 
