@@ -9,16 +9,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.SlotItemHandler;
 
-public class CatalyzerReagentSlot extends Slot
+public class CatalyzerReagentSlot extends SlotItemHandler
 {
-    private final AbstractContainerMenu container;
-    private final Container matrix;
 
-    public CatalyzerReagentSlot(AbstractContainerMenu container, Container matrix, Container inventory, int index, int xPosition, int yPosition) {
-        super(inventory, index, xPosition, yPosition);
-        this.container = container;
-        this.matrix = matrix;
+    public CatalyzerReagentSlot(IItemHandler itemHandler, int index, int x, int y) {
+        super(itemHandler, index, x, y);
     }
 
     @Override

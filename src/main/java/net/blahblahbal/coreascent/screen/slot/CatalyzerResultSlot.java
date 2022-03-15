@@ -8,14 +8,17 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.SlotItemHandler;
 
-public class CatalyzerResultSlot extends Slot
+public class CatalyzerResultSlot extends SlotItemHandler
 {
     private final AbstractContainerMenu container;
     private final Container matrix;
 
-    public CatalyzerResultSlot(AbstractContainerMenu container, Container matrix, Container inventory, int index, int xPosition, int yPosition) {
-        super(inventory, index, xPosition, yPosition);
+    public CatalyzerResultSlot(IItemHandler itemHandler, AbstractContainerMenu container, Container matrix, Container inventory, int index, int x, int y)
+    {
+        super(itemHandler, index, x, y);
         this.container = container;
         this.matrix = matrix;
     }

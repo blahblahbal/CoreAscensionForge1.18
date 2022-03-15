@@ -15,6 +15,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -41,6 +42,7 @@ public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider {
     };
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    //protected final ContainerData data;
 
     public CatalyzerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.CATALYZER.get(), pWorldPosition, pBlockState);
@@ -53,14 +55,17 @@ public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider {
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new CatalyzerMenu(pContainerId, pInventory);
+    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer)
+    {
+        return new CatalyzerMenu(pContainerId, pInventory, this);
     }
 
     @Nonnull
     @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side)
+    {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+        {
             return lazyItemHandler.cast();
         }
 

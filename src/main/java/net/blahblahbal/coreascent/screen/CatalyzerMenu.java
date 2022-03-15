@@ -2,10 +2,7 @@ package net.blahblahbal.coreascent.screen;
 
 import net.blahblahbal.coreascent.api.crafting.ICatalyzerRecipe;
 import net.blahblahbal.coreascent.api.crafting.RecipeTypes;
-import net.blahblahbal.coreascent.api.crafting.recipe.CatalyzerRecipe;
-import net.blahblahbal.coreascent.block.ModBlocks;
 import net.blahblahbal.coreascent.block.entity.CatalyzerBlockEntity;
-import net.blahblahbal.coreascent.block.entity.ModBlockEntities;
 import net.blahblahbal.coreascent.screen.slot.CatalyzerReagentSlot;
 import net.blahblahbal.coreascent.screen.slot.CatalyzerResultSlot;
 import net.blahblahbal.coreascent.screen.slot.CatalyzerSulphurSlot;
@@ -17,16 +14,12 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingRecipe;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
-import java.util.function.Function;
 
 public class CatalyzerMenu extends AbstractContainerMenu
 {
@@ -34,19 +27,28 @@ public class CatalyzerMenu extends AbstractContainerMenu
     private final ResultContainer result;
     private final CraftingContainer matrix = new CraftingContainer(this, 4, 1);
     private final Player player;
+    private final CatalyzerBlockEntity blockEntity;
+    //private final ContainerData data;
 
-    public CatalyzerMenu(int id, Inventory inv)
+    public CatalyzerMenu(int windowId, Inventory inv, FriendlyByteBuf extraData) {
+        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
+    }
+
+    public CatalyzerMenu(int id, Inventory inv, BlockEntity entity)
     {
         super(ModMenuTypes.CATALYZER.get(), id);
         checkContainerSize(inv, 4);
+        this.blockEntity = (CatalyzerBlockEntity)entity;
         this.level = inv.player.level;
         this.result = new ResultContainer();
         this.player = inv.player;
 
-        this.addSlot(new Slot(matrix, 0, 23, 18)); // input
-        this.addSlot(new CatalyzerSulphurSlot(this, matrix, inv, 1, 23, 44));
-        this.addSlot(new CatalyzerReagentSlot(this, matrix, inv, 2, 55, 18));
-        this.addSlot(new CatalyzerResultSlot(this, matrix, inv, 3, 117, 30));
+        this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
+            this.addSlot(new SlotItemHandler(handler, 0, 23, 18));
+            this.addSlot(new CatalyzerSulphurSlot(handler, 1, 23, 44));
+            this.addSlot(new CatalyzerReagentSlot(handler, 2, 55, 18));
+            this.addSlot(new CatalyzerResultSlot(handler, this, matrix, inv, 3, 117, 30));
+        });
 
         int i, j;
         for (i = 0; i < 3; i++)
@@ -171,8 +173,5 @@ public class CatalyzerMenu extends AbstractContainerMenu
         {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }
-    }
-    public static CatalyzerMenu create(int windowId, Inventory playerInventory, FriendlyByteBuf friendlyByteBuf) {
-        return new CatalyzerMenu(windowId, playerInventory);
     }
 }

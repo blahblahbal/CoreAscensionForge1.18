@@ -64,8 +64,7 @@ public class CoreAscension
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DIAMOND_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_TRAPDOOR.get(), RenderType.cutout());
-        ModMenuTypes.onClientSetup();
-        //MenuScreens.register(ModMenuTypes.CATALYZER.get(), CatalyzerScreen::new);
+        MenuScreens.register(ModMenuTypes.CATALYZER.get(), CatalyzerScreen::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)
