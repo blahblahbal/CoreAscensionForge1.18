@@ -45,7 +45,7 @@ public class CatalyzerMenu extends AbstractContainerMenu
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 23, 18));
-            this.addSlot(new CatalyzerSulphurSlot(handler, 1, 23, 44));
+            this.addSlot(new CatalyzerSulphurSlot(handler, 1, 39, 44));
             this.addSlot(new CatalyzerReagentSlot(handler, 2, 55, 18));
             this.addSlot(new CatalyzerResultSlot(handler, this, matrix, inv, 3, 117, 30));
         });
