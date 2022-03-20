@@ -13,8 +13,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -29,63 +27,55 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
-public class CatalyzerBlock extends BaseEntityBlock {
+public class CatalyzerBlock extends BaseEntityBlock
+{
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public CatalyzerBlock(Properties properties) {
+    public CatalyzerBlock(Properties properties)
+    {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
     }
 
-    private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(0, 0, 0, 16, 25, 16)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
-
-    private static final VoxelShape SHAPE_E = Stream.of(
-            Block.box(0, 0, 0, 16, 25, 16)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
-
-    private static final VoxelShape SHAPE_S = Stream.of(
-            Block.box(0, 0, 0, 16, 25, 16)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
-
-    private static final VoxelShape SHAPE_W = Stream.of(
+    private static final VoxelShape SHAPE = Stream.of(
             Block.box(0, 0, 0, 16, 25, 16)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch (pState.getValue(FACING)) {
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext)
+    {
+        switch (pState.getValue(FACING))
+        {
             case NORTH:
-                return SHAPE_N;
             case SOUTH:
-                return SHAPE_S;
             case WEST:
-                return SHAPE_W;
             case EAST:
-                return SHAPE_E;
             default:
-                return SHAPE_N;
+                return SHAPE;
         }
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
     @Override
-    public BlockState rotate(BlockState pState, Rotation pRotation) {
+    public BlockState rotate(BlockState pState, Rotation pRotation)
+    {
         return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState pState, Mirror pMirror) {
+    public BlockState mirror(BlockState pState, Mirror pMirror)
+    {
         return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    {
         pBuilder.add(FACING);
     }
 
@@ -95,10 +85,13 @@ public class CatalyzerBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (pState.getBlock() != pNewState.getBlock()) {
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving)
+    {
+        if (pState.getBlock() != pNewState.getBlock())
+        {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof CatalyzerBlockEntity) {
+            if (blockEntity instanceof CatalyzerBlockEntity)
+            {
                 ((CatalyzerBlockEntity) blockEntity).drops();
             }
         }
@@ -106,12 +99,17 @@ public class CatalyzerBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
-                                 Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
+                                 Player pPlayer, InteractionHand pHand, BlockHitResult pHit)
+    {
+        if (!pLevel.isClientSide())
+        {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof CatalyzerBlockEntity) {
+            if(entity instanceof CatalyzerBlockEntity)
+            {
                 NetworkHooks.openGui(((ServerPlayer)pPlayer), (CatalyzerBlockEntity)entity, pPos);
-            } else {
+            }
+            else
+            {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
         }
@@ -121,7 +119,8 @@ public class CatalyzerBlock extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
+    {
         return new CatalyzerBlockEntity(pPos, pState);
     }
 }

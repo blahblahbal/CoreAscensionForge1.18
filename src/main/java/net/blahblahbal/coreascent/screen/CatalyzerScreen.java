@@ -32,7 +32,7 @@ public class CatalyzerScreen extends AbstractContainerScreen<CatalyzerMenu> {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight, 176, 166);
+        blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
     }
 
     @Override

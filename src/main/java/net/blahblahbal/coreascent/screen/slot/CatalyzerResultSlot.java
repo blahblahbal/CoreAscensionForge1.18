@@ -1,12 +1,7 @@
 package net.blahblahbal.coreascent.screen.slot;
 
-import net.blahblahbal.coreascent.api.crafting.RecipeTypes;
-import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.CraftingContainer;
-import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
@@ -29,7 +24,7 @@ public class CatalyzerResultSlot extends SlotItemHandler
         return false;
     }
 
-    @Override
+    /*@Override
     public void onTake(Player player, ItemStack stack)
     {
 
@@ -58,5 +53,5 @@ public class CatalyzerResultSlot extends SlotItemHandler
         }
 
         this.container.slotsChanged(this.matrix);
-    }
+    }*/
 }

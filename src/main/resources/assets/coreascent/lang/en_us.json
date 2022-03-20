@@ -111,5 +111,7 @@
   "block.coreascent.diorite_tile" : "Diorite Tiles",
   "item.coreascent.diorite_tile" : "Diorite Tiles",
   "block.coreascent.granite_tile" : "Granite Tiles",
-  "item.coreascent.granite_tile" : "Granite Tiles"
+  "item.coreascent.granite_tile" : "Granite Tiles",
+  "block.coreascent.catalyzer" : "Catalyzer",
+  "item.coreascent.catalyzer" : "Catalyzer"
 }
