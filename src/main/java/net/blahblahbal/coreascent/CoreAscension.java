@@ -30,7 +30,6 @@ public class CoreAscension
     public CoreAscension()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        eventBus.register(new ModRecipeSerializers());
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModBlockEntities.register(eventBus);
