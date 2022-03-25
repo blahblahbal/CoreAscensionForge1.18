@@ -13,8 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(bus= Mod.EventBusSubscriber.Bus.MOD)
 public class ModTiers
 {
-    public static final Tag.Named<Block> NEEDS_NETHERITE_TOOL =
-            BlockTags.createOptional(new ResourceLocation("forge:needs_netherite_tool"));
     public static final Tag.Named<Block> NEEDS_BEDROCK_TOOL =
             BlockTags.createOptional(new ResourceLocation("forge:needs_bedrock_tool"));
     public static final ForgeTier TADANITE = new ForgeTier(5, 4000, 14f,

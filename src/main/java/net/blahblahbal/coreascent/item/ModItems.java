@@ -33,6 +33,10 @@ public class ModItems
                     new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     // end lumite tools
 
+    public static final RegistryObject<Item> BEDROCK_PICKAXE = ITEMS.register("bedrock_pickaxe",
+            () -> new PickaxeItem(ModTiers.BEDROCK, 2, -2.8f,
+                    new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
+
     // tadanite
     public static final RegistryObject<Item> TADANITE_PICKAXE = ITEMS.register("tadanite_pickaxe",
             () -> new PickaxeItem(ModTiers.TADANITE, 2, -2.8f,
@@ -78,6 +82,8 @@ public class ModItems
     public static final RegistryObject<Item> TANZANITE = ITEMS.register("tanzanite",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
 
+    public static final RegistryObject<Item> LIMESTONE = ITEMS.register("limestone",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ITEM_TAB)));
     // end gems
 
     public static final RegistryObject<Item> OSBORGNEN_FUEL = ITEMS.register("osborgnen_fuel",

@@ -23,6 +23,10 @@ public class ModPlacedFeatures
             ModConfiguredFeature.TANZANITE_ORE.placed(ModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(55)))));
 
+    public static final PlacedFeature LIMESTONE_ORE_PLACED = PlacementUtils.register("limestone_ore_placed",
+            ModConfiguredFeature.LIMESTONE_ORE.placed(ModOrePlacement.commonOrePlacement(4, // VeinsPerChunk
+                    HeightRangePlacement.uniform(VerticalAnchor.absolute(25), VerticalAnchor.absolute(60)))));
+
     public static final PlacedFeature IGNEOUS_ROCK_PLACED = PlacementUtils.register("igneous_rock_placed",
             ModConfiguredFeature.IGNEOUS_ROCK.placed(ModOrePlacement.commonOrePlacement(1, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(60)))));
@@ -34,5 +38,5 @@ public class ModPlacedFeatures
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(60)))));
     public static final PlacedFeature HARDENED_LAVA_PLACED = PlacementUtils.register("hardened_lava_placed",
             ModConfiguredFeature.HARDENED_LAVA.placed(ModOrePlacement.commonOrePlacement(1, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(30)))));
+                    HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-10)))));
 }

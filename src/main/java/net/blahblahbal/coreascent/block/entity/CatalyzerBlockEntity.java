@@ -33,11 +33,11 @@ public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider
     private final ItemStackHandler itemHandler = new ItemStackHandler(4)
     {
         @Override
-        protected void onContentsChanged(int slot) {
+        protected void onContentsChanged(int slot)
+        {
             setChanged();
         }
     };
-
 
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
@@ -73,19 +73,22 @@ public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
-    public void onLoad() {
+    public void onLoad()
+    {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
 
     @Override
-    public void invalidateCaps()  {
+    public void invalidateCaps()
+    {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag tag) {
+    protected void saveAdditional(@NotNull CompoundTag tag)
+    {
         tag.put("inventory", itemHandler.serializeNBT());
         super.saveAdditional(tag);
     }
@@ -105,7 +108,45 @@ public class CatalyzerBlockEntity extends BlockEntity implements MenuProvider
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    private static void craftItem(CatalyzerBlockEntity entity)
+    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, CatalyzerBlockEntity entity)
+    {
+        if (hasRecipe(entity))
+        {
+            CatalyzerMenu.slotChangedCraftingGrid(pLevel);
+            setChanged(pLevel, pPos, pState);
+        }
+        else
+        {
+            setChanged(pLevel, pPos, pState);
+        }
+    }
+
+    private static boolean hasRecipe(CatalyzerBlockEntity entity)
+    {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<CatalyzerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(CatalyzerRecipe.Type.INSTANCE, inventory, level);
+
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
+    }
+
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output)
+    {
+        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+    }
+
+    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory)
+    {
+        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
+    }
+
+    public static void craftItem(CatalyzerBlockEntity entity)
     {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());

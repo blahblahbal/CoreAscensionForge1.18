@@ -2,10 +2,15 @@ package net.blahblahbal.coreascent.screen;
 
 import net.blahblahbal.coreascent.block.ModBlocks;
 import net.blahblahbal.coreascent.block.entity.CatalyzerBlockEntity;
+import net.blahblahbal.coreascent.recipe.CatalyzerRecipe;
 import net.blahblahbal.coreascent.screen.slot.CatalyzerReagentSlot;
 import net.blahblahbal.coreascent.screen.slot.CatalyzerResultSlot;
 import net.blahblahbal.coreascent.screen.slot.CatalyzerSulphurSlot;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -15,11 +20,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
+import java.util.Optional;
+
 public class CatalyzerMenu extends AbstractContainerMenu
 {
     private final Level level;
-    private final ResultContainer result;
-    private final CraftingContainer matrix = new CraftingContainer(this, 4, 1);
+    private static final ResultContainer resultContainer = new ResultContainer();;
+    private static final SimpleContainer matrix = new SimpleContainer(4);
     private final Player player;
     private final CatalyzerBlockEntity blockEntity;
 
@@ -34,7 +41,6 @@ public class CatalyzerMenu extends AbstractContainerMenu
         checkContainerSize(inv, 4);
         this.blockEntity = (CatalyzerBlockEntity)entity;
         this.level = inv.player.level;
-        this.result = new ResultContainer();
         this.player = inv.player;
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler ->
@@ -50,14 +56,14 @@ public class CatalyzerMenu extends AbstractContainerMenu
         {
             for (j = 0; j < 9; j++)
             {
-                this.addSlot(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18)); // 88
+                this.addSlot(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
-
         for (j = 0; j < 9; j++)
         {
-            this.addSlot(new Slot(inv, j, 8 + j * 18, 142)); // 146
+            this.addSlot(new Slot(inv, j, 8 + j * 18, 142));
         }
+        slotsChanged(matrix);
     }
 
     @Override
@@ -121,6 +127,24 @@ public class CatalyzerMenu extends AbstractContainerMenu
         }
         slotChangedCraftingGrid(this, this.level, this.player, this.matrix, this.result);
     }*/
+    @Override
+    public void slotsChanged(Container pInventory)
+    {
+        var recipe = this.level.getRecipeManager().getRecipeFor(CatalyzerRecipe.Type.INSTANCE, matrix, this.level);
+        if (recipe.isPresent())
+        {
+            var result = recipe.get().assemble(matrix);
+            CatalyzerBlockEntity.craftItem(blockEntity);
+            this.resultContainer.setItem(0, result);
+        }
+        else
+        {
+            this.resultContainer.setItem(0, ItemStack.EMPTY);
+        }
+        super.slotsChanged(matrix);
+    }
+
+
 
     @Override
     public boolean stillValid(Player pPlayer)
@@ -129,16 +153,27 @@ public class CatalyzerMenu extends AbstractContainerMenu
                 pPlayer, ModBlocks.CATALYZER.get());
     }
 
-    /*public static void slotChangedCraftingGrid(AbstractContainerMenu menu, Level level, Player player, CraftingContainer craftingContainer, ResultContainer resultContainer)
+    public static void slotChangedCraftingGrid(Level level)
     {
-        if (!level.isClientSide)
+        var recipe = level.getRecipeManager().getRecipeFor(CatalyzerRecipe.Type.INSTANCE, matrix, level);
+        if (recipe.isPresent())
+        {
+            var result = recipe.get().assemble(matrix);
+            //CatalyzerBlockEntity.craftItem(blockEntity);
+            resultContainer.setItem(0, result);
+        }
+        else
+        {
+            resultContainer.setItem(0, ItemStack.EMPTY);
+        }
+        /*if (!level.isClientSide)
         {
             ServerPlayer serverplayer = (ServerPlayer)player;
             ItemStack itemstack = ItemStack.EMPTY;
             Optional<CatalyzerRecipe> optional = level.getServer().getRecipeManager().getRecipeFor(RecipeTypes.CATALYZER, craftingContainer, level);
             if (optional.isPresent())
             {
-                ICatalyzerRecipe recipe = optional.get();
+                CatalyzerRecipe recipe = optional.get();
                 if (resultContainer.setRecipeUsed(level, serverplayer, recipe))
                 {
                     itemstack = recipe.assemble(craftingContainer);
@@ -148,6 +183,6 @@ public class CatalyzerMenu extends AbstractContainerMenu
             resultContainer.setItem(3, itemstack);
             menu.setRemoteSlot(3, itemstack);
             serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 3, itemstack));
-        }
-    }*/
+        }*/
+    }
 }

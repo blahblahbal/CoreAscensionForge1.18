@@ -13,7 +13,7 @@ public final class ModRecipeSerializers
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CoreAscension.MOD_ID);
 
     public static final RegistryObject<RecipeSerializer<CatalyzerRecipe>> CATALYZER_SERIALIZER =
-            SERIALIZERS.register("cobalt_blasting", () -> CatalyzerRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("catalyzer", () -> CatalyzerRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus)
     {

@@ -28,6 +28,20 @@
     "coreascent:polished_igneous_rock",
     "coreascent:polished_magnetite",
     "coreascent:polished_saltrock",
-    "coreascent:saltrock"
+    "coreascent:saltrock",
+    "coreascent:limestone_ore",
+    "coreascent:limestone_block",
+    "coreascent:ender_pearl_bricks",
+    "coreascent:cement",
+    "coreascent:diamond_door",
+    "coreascent:diamond_trapdoor",
+    "coreascent:gold_door",
+    "coreascent:gold_trapdoor",
+    "coreascent:glass_door",
+    "coreascent:glass_trapdoor",
+    "coreascent:cobblestone_door",
+    "coreascent:cobblestone_trapdoor",
+    "coreascent:catalyzer",
+    "minecraft:bedrock"
   ]
 }

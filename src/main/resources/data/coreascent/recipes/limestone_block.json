@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "coreascent:limestone"
+    }
+  },
+  "result": {
+    "item": "coreascent:limestone_block"
+  }
+}

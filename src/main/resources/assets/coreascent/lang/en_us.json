@@ -21,6 +21,8 @@
   "item.coreascent.tadanite_leggings" : "§aTadanite Leggings",
   "item.coreascent.tadanite_boots" : "§aTadanite Boots",
 
+  "item.coreascent.bedrock_pickaxe" : "§eBedrock Pickaxe",
+
   "item.coreascent.lumite_ingot" : "§6Lumite Ingot",
   "item.coreascent.lumite_nugget" : "§6Lumite Nugget",
   "item.coreascent.lumite_gear" : "§6Lumite Gear",
@@ -113,5 +115,11 @@
   "block.coreascent.granite_tile" : "Granite Tiles",
   "item.coreascent.granite_tile" : "Granite Tiles",
   "block.coreascent.catalyzer" : "Catalyzer",
-  "item.coreascent.catalyzer" : "Catalyzer"
+  "item.coreascent.catalyzer" : "Catalyzer",
+  "block.coreascent.limestone_ore" : "Limestone Ore",
+  "item.coreascent.limestone_ore" : "Limestone Ore",
+  "block.coreascent.limestone_block" : "Block of Limestone",
+  "item.coreascent.limestone_block" : "Block of Limestone",
+  "block.coreascent.ender_pearl_bricks" : "Ender Pearl Bricks",
+  "item.coreascent.ender_pearl_bricks" : "Ender Pearl Bricks"
 }

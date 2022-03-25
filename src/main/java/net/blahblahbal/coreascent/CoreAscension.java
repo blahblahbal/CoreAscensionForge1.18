@@ -1,5 +1,6 @@
 package net.blahblahbal.coreascent;
 
+import net.blahblahbal.coreascent.event.ModEventHandler;
 import net.blahblahbal.coreascent.recipe.ModRecipeSerializers;
 import net.blahblahbal.coreascent.block.ModBlocks;
 import net.blahblahbal.coreascent.block.entity.ModBlockEntities;
@@ -41,6 +42,7 @@ public class CoreAscension
         ModRecipeSerializers.register(eventBus);
 
         // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(new ModEventHandler());
         MinecraftForge.EVENT_BUS.register(this);
     }
 

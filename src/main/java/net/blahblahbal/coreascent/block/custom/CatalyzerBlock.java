@@ -13,6 +13,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -122,5 +124,12 @@ public class CatalyzerBlock extends BaseEntityBlock
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
         return new CatalyzerBlockEntity(pPos, pState);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType)
+    {
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.CATALYZER.get(), CatalyzerBlockEntity::tick);
     }
 }

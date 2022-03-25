@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CLC",
+    "LLL",
+    "GWG"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:clay"
+    },
+    "L": {
+      "item": "coreascent:limestone"
+    },
+    "G": {
+      "item": "minecraft:gravel"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "coreascent:cement",
+    "count": 8
+  }
+}

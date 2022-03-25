@@ -7,6 +7,8 @@
     "coreascent:topaz_block",
     "coreascent:sapphire_block",
     "coreascent:tanzanite_block",
-    "coreascent:blaze_brick"
+    "coreascent:blaze_brick",
+    "coreascent:limestone_ore",
+    "coreascent:limestone_block"
   ]
 }

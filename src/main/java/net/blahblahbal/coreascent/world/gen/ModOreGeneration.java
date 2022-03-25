@@ -53,6 +53,7 @@ public class ModOreGeneration
         base.add(() -> ModPlacedFeatures.MAGNETITE_PLACED);
         base.add(() -> ModPlacedFeatures.SALTROCK_PLACED);
         base.add(() -> ModPlacedFeatures.HARDENED_LAVA_PLACED);
+        base.add(() -> ModPlacedFeatures.LIMESTONE_ORE_PLACED);
 
         /*List<Supplier<PlacedFeature>> topaz =
                 event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
