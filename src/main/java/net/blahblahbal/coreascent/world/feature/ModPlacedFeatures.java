@@ -1,3 +1,5 @@
+/*
+
 package net.blahblahbal.coreascent.world.feature;
 
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -40,3 +42,5 @@ public class ModPlacedFeatures
             ModConfiguredFeature.HARDENED_LAVA.placed(ModOrePlacement.commonOrePlacement(1, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-10)))));
 }
+
+ */

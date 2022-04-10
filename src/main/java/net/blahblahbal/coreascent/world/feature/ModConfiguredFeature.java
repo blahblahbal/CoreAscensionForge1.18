@@ -1,3 +1,5 @@
+/*
+
 package net.blahblahbal.coreascent.world.feature;
 
 import net.blahblahbal.coreascent.block.ModBlocks;
@@ -70,3 +72,6 @@ public class ModConfiguredFeature
     public static final ConfiguredFeature<?, ?> HARDENED_LAVA = FeatureUtils.register("hardened_lava",
             Feature.ORE.configured(new OreConfiguration(HARDENED_LAVAS, 15)));
 }
+
+
+ */

@@ -1,3 +1,5 @@
+/*
+
 package net.blahblahbal.coreascent.world.gen;
 
 import net.blahblahbal.coreascent.world.feature.ModPlacedFeatures;
@@ -62,5 +64,8 @@ public class ModOreGeneration
         List<Supplier<PlacedFeature>> igneousRock =
                 event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
         igneousRock.add(() -> ModPlacedFeatures.IGNEOUS_ROCK_PLACED);*/
+/*
     }
 }
+
+*/

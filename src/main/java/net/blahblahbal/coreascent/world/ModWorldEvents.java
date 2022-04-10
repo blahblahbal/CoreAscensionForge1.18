@@ -1,3 +1,4 @@
+/*
 package net.blahblahbal.coreascent.world;
 
 import net.blahblahbal.coreascent.CoreAscension;
@@ -16,3 +17,5 @@ public class ModWorldEvents
         ModOreGeneration.generateOres(event);
     }
 }
+
+ */

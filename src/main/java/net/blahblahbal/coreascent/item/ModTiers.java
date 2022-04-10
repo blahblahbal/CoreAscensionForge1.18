@@ -10,11 +10,11 @@ import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.fml.common.Mod;
 
+import static net.blahblahbal.coreascent.util.ModTags.Blocks.NEEDS_BEDROCK_TOOL;
+
 @Mod.EventBusSubscriber(bus= Mod.EventBusSubscriber.Bus.MOD)
 public class ModTiers
 {
-    public static final Tag.Named<Block> NEEDS_BEDROCK_TOOL =
-            BlockTags.createOptional(new ResourceLocation("forge:needs_bedrock_tool"));
     public static final ForgeTier TADANITE = new ForgeTier(5, 4000, 14f,
             6f, 20, Tags.Blocks.NEEDS_NETHERITE_TOOL,
             () -> Ingredient.of(ModItems.TADANITE_CRYSTAL.get()));
